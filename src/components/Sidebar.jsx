@@ -14,6 +14,7 @@ const Sidebar = () => {
         <Link to="/colombia" className="nav-link">Colombia</Link>
         <Link to="/puerto-rico" className="nav-link">Puerto Rico</Link>
         <Link to="/comparative" className="nav-link">Comparative</Link>
+        <Link to="/news" className="nav-link">News</Link>
       </nav>
     </div>
   );

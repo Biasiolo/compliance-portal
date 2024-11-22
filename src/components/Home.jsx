@@ -50,15 +50,25 @@ const Home = () => {
           </Col>
         ))}
       </Row>
-      <Row className="justify-content-center mb-5">
+      <Row className="mb-3">
         <Col>
-          <Link to="/comparative">
-            <div className="comp">
-              View Comparative Analysis
+          <Link to="/news">
+            <div className="comp2">
+              News Clipping
             </div>
           </Link>
         </Col>
       </Row>
+      <Row className="justify-content-center mb-5">
+        <Col>
+          <Link to="/comparative">
+            <div className="comp">
+              Comparative Analysis
+            </div>
+          </Link>
+        </Col>
+      </Row>
+      
       <Row className="dev">
         <Col>
           <p> Development by @Biasiolo</p>

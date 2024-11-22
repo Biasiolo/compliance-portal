@@ -1,7 +1,7 @@
 /* General styling for all country pages */
 
 .country-container {
-
+    margin-top: 32px;
     padding: 20px;
   
     h1 {
@@ -107,20 +107,38 @@
   table {
     margin-top: 20px;
     font-size: 0.9rem;
+    transition: all ease 0.2s;
 
     th {
       text-align: center;
-      background-color: #f8f9fa;
+      background-color: #faf9f8;
+      
     }
 
     td {
       text-align: center;
       vertical-align: middle;
+      height: 96px;
+      max-height: 96px;
+      width: 150px;
+      &:hover {
+        background: #007bff;
+        font-weight: 500;
+        color:#faf9f8;
+      }
     }
 
   }
 
   .mec {
     font-weight: 600;
+
+    &:hover {
+        background: rgb(0, 88, 252);
+        font-weight: 500;
+        color:#faf9f8;
+      }
   }
+
+ 
   

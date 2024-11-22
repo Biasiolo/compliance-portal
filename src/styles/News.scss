@@ -1,0 +1,113 @@
+/* Container geral */
+.news-container {
+    margin-top: 30px;
+  
+    h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+  }
+  
+  /* Estilo dos cards */
+  .news-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    img {
+      height: 224px;
+      object-fit: cover;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .card-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: left;
+        display: -webkit-box;
+        line-clamp: 2; /* Limita o texto a 2 linhas */
+        box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+
+
+        height: 88px;
+      }
+      
+  
+      .card-text {
+        font-size: 0.9rem;
+        text-align: left;
+        margin-bottom: 10px;
+        color: #666;
+  
+        small {
+          display: block;
+          font-size: 0.8rem;
+          color: #999;
+        }
+      }
+  
+      
+    }
+  }
+  
+  /* Controle de altura para os títulos e descrições */
+
+  .card-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* Estilo responsivo */
+  @media (max-width: 768px) {
+    .news-card {
+      margin-bottom: 20px;
+    }
+  
+    .card-title {
+      font-size: 1rem;
+    }
+  
+    .card-text {
+      font-size: 0.8rem;
+    }
+  }
+
+  .btn {
+     padding: 4px 16px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-color: #0056b3;
+    font-size: 0.9rem;
+    border-radius: 24px;
+    color: #000;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #004494;
+      border-color: #004494;
+      color:#f5f5f5;
+    }
+  }
+  

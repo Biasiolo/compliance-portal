@@ -8,6 +8,7 @@ import Mexico from './components/Mexico';
 import Colombia from './components/Colombia';
 import PuertoRico from './components/PuertoRico';
 import Comparative from './components/Comparative';
+import NewsClipping from './components/NewsClipping';
 // Importe os demais países conforme necessário
 
 const App = () => {
@@ -59,7 +60,7 @@ const App = () => {
           }
         />
 
-<Route
+        <Route
           path="/puerto-rico"
           element={
             <div className="d-flex vw-100">
@@ -69,7 +70,7 @@ const App = () => {
           }
         />
 
-<Route
+        <Route
           path="/comparative"
           element={
             <div className="d-flex vw-100">
@@ -78,7 +79,22 @@ const App = () => {
             </div>
           }
         />
+
+<Route
+          path="/news"
+          element={
+            <div className="d-flex vw-100">
+              <Sidebar />
+              <NewsClipping />
+            </div>
+          }
+        />
       </Routes>
+
+      
+
+
+
     </Router>
   );
 };

@@ -55,7 +55,7 @@ const Comparative = () => {
   ];
 
   return (
-    <Container className="country-container mt-4 align-items-center">
+    <Container className="country-container mt-5 align-items-center">
       <Row>
         <Col>
           <h1>Comparative Analysis</h1>

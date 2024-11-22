@@ -14,8 +14,8 @@ const Home = () => {
   ];
 
   return (
-    <Container className="home-container text-center">
-      <Row className="banner-row mt-0">
+    <Container className="home-container text-center pt-0">
+      <Row className="mt-0 mb-5">
         <Col>
           <div className="banner-row">
           </div>

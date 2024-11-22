@@ -35,7 +35,9 @@ const Home = () => {
       <Row className="justify-content-center mb-5">
         {countries.map((country) => (
           <Col key={country.name} lg={2} md={4} sm={6} xs={12} className="d-flex justify-content-center mb-4">
+            
             <Card className="country-card text-center">
+            <a href={country.path} className="band ">
               <Card.Img
                 variant="top"
                 src={country.flag}
@@ -44,9 +46,10 @@ const Home = () => {
               />
               <Card.Body className="align-items-center">
                 <Card.Title>{country.name}</Card.Title>
-                <a href={country.path} className="btn ">Explore</a>
               </Card.Body>
+              </a>
             </Card>
+            
           </Col>
         ))}
       </Row>

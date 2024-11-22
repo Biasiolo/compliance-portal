@@ -7,6 +7,8 @@ align-items: center;
 padding: 20px;
 height: 100%;
 
+
+
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -25,7 +27,9 @@ height: 100%;
     width: 100%;
     width: 232px; /* Reduz o tamanho para caber todos na mesma linha */
     border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
@@ -36,22 +40,9 @@ height: 100%;
     .country-flag {
       height: 100px;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 24px 24px 5px 5px;
     }
 
-    .btn {
-      background-color: #0056b3;
-      color: #f1f1f1;
-      border: none;
-      font-weight: 500;
-      border-radius: 24px;
-      align-items: center;
-      padding: 8px 16px;
-
-      &:hover {
-        background-color: #008fb3;
-      }
-    }
   }
 
   .comp {
@@ -62,6 +53,11 @@ height: 100%;
     font-weight: 500;
     width: 260px;
     font-size: 1.1rem;
+    &:hover {
+      background: transparent;
+      color: #000;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
   }
 
   .comp2 {
@@ -72,6 +68,11 @@ height: 100%;
     font-weight: 500;
     width: 260px;
     font-size: 1.1rem;
+    &:hover {
+      background: transparent;
+      color: #000;
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
   }
 
 
@@ -98,4 +99,8 @@ height: 100%;
   padding: 40px 200px;
   width: 100vw;
   background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
 }

@@ -15,13 +15,12 @@ const Home = () => {
 
   return (
     <Container className="home-container text-center">
+      <Row className="banner-row mt-0">
+        <Col>
+          <div className="banner-row">
+          </div>
+        </Col>
 
-
-      <Row >
-<Col><div className="banner-row mb-5">
-
-</div></Col>
-        
       </Row>
       <Row className="justify-content-center mb-5">
         <Col lg={10}>

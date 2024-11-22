@@ -42,7 +42,7 @@ const Home = () => {
                 alt={`${country.name} flag`}
                 className="country-flag"
               />
-              <Card.Body>
+              <Card.Body className="align-items-center">
                 <Card.Title>{country.name}</Card.Title>
                 <a href={country.path} className="btn ">Explore</a>
               </Card.Body>

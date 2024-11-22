@@ -74,3 +74,13 @@ height: 100%;
   }
   
 }
+.banner-row {
+  background-image: url('../assets/test.png');
+  background-size: cover;
+  background-position: bottom;
+  height: 128px;
+  color: white;
+  padding: 40px 200px;
+  width: 100vw;
+  background-repeat: no-repeat;
+}

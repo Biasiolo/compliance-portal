@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/Home.scss';
 
+
 const Home = () => {
   const countries = [
     { name: 'Brazil', flag: 'https://flagcdn.com/w320/br.png', path: '/brazil' },
@@ -14,6 +15,14 @@ const Home = () => {
 
   return (
     <Container className="home-container text-center">
+
+
+      <Row >
+<Col><div className="banner-row mb-5">
+
+</div></Col>
+        
+      </Row>
       <Row className="justify-content-center mb-5">
         <Col lg={10}>
           <h1 className="mt-4">Compliance Portal</h1>
@@ -44,19 +53,16 @@ const Home = () => {
       </Row>
       <Row className="justify-content-center mb-5">
         <Col>
-        
-        <Link to="/comparative">
-        <div className="comp">
-            View Comparative Analysis
+          <Link to="/comparative">
+            <div className="comp">
+              View Comparative Analysis
             </div>
           </Link>
-        
-          
         </Col>
       </Row>
       <Row className="dev">
         <Col>
-        <p> Development by @Biasiolo</p>
+          <p> Development by @Biasiolo</p>
         </Col>
       </Row>
     </Container>

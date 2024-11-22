@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import '../styles/news.scss';
+import '../styles/News.scss';
 
 import BannerImage from '../assets/test.png';
 

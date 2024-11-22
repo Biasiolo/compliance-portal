@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../styles/Home.scss';
 
 const Home = () => {
@@ -40,6 +41,13 @@ const Home = () => {
             </Card>
           </Col>
         ))}
+      </Row>
+      <Row className="justify-content-center mb-5">
+        <Col>
+          <Link to="/comparative" className="btn btn-primary">
+            View Comparative Analysis
+          </Link>
+        </Col>
       </Row>
       <Row className="dev">
         <Col>

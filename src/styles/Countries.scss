@@ -103,4 +103,24 @@
       }
     }
   }
+
+  table {
+    margin-top: 20px;
+    font-size: 0.9rem;
+
+    th {
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+  }
+
+  .mec {
+    font-weight: 600;
+  }
   

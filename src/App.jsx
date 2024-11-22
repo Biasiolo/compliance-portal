@@ -7,6 +7,7 @@ import Argentina from './components/Argentina'; // Importa o componente da Argen
 import Mexico from './components/Mexico';
 import Colombia from './components/Colombia';
 import PuertoRico from './components/PuertoRico';
+import Comparative from './components/Comparative';
 // Importe os demais países conforme necessário
 
 const App = () => {
@@ -64,6 +65,16 @@ const App = () => {
             <div className="d-flex vw-100">
               <Sidebar />
               <PuertoRico />
+            </div>
+          }
+        />
+
+<Route
+          path="/comparative"
+          element={
+            <div className="d-flex vw-100">
+              <Sidebar />
+              <Comparative />
             </div>
           }
         />

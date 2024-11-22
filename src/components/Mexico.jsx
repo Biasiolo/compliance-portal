@@ -4,7 +4,7 @@ import '../styles/Countries.scss';
 
 const Mexico = () => {
   return (
-    <Container className="country-container" style={{ marginLeft: '260px', padding: '20px' }}>
+    <Container className="country-container">
       <Row>
         <Col>
           <h1>Mexico</h1>

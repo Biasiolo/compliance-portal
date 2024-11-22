@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", system-ui;
+  scroll-behavior: smooth;
+  
+}
+
+body,
+html {
+  height: 100%;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+
+}
+
+/* Remover decorações e aplicar cores padrões */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+button {
+  cursor: pointer;
+  background-color: #01f5f5;
+  border: none;
+}
+
+
+body {
+
+  margin: 0 auto;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.8;
+}
+
+
+
+

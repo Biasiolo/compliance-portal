@@ -2,8 +2,14 @@
     width: 240px;
     height: auto;
 
-    padding: 20px;
+    padding: 8px;
     border-right: 1px solid #ddd;
+    align-items: center;
+
+    .nav {
+      width: 100%;
+      align-items: center;
+    }
   }
   
   .sidebar .nav-link {
@@ -12,17 +18,23 @@
     transition: color 0.3s;
     font-size: 1rem;
     text-align: center;
+    width: 100%;
+    border-radius: 24px;
+    padding: 8px 8px;
+    height: 40px;
+    transition: all ease 0.1s;
   }
   
   .sidebar .nav-link:hover {
-    color: #007bff;
+    color: #f7f7f7;
     text-decoration: none;
+    background-color: #0056b3;
   }
 
 
   @media (max-width: 992px) {
     .sidebar {
-      width: 33%;
+      width: 35%;
       
     }
   }

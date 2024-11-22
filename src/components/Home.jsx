@@ -44,9 +44,14 @@ const Home = () => {
       </Row>
       <Row className="justify-content-center mb-5">
         <Col>
-          <Link to="/comparative" className="btn btn-primary">
+        
+        <Link to="/comparative">
+        <div className="comp">
             View Comparative Analysis
+            </div>
           </Link>
+        
+          
         </Col>
       </Row>
       <Row className="dev">

@@ -18,7 +18,7 @@ const NewsClipping = () => {
           language: 'en',
           sortBy: 'relevancy',
           pageSize: 30,
-          apiKey: '14047203ddc4449e96e57b679f8acc15', // Substitua pela sua API Key
+          apiKey: process.env.REACT_APP_NEWS_API_KEY
         },
       });
 

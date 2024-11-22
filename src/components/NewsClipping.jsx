@@ -12,7 +12,7 @@ const NewsClipping = () => {
   const fetchNews = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://newsapi.org/v2/everything', {
+      const response = await axios.get('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything', {
         params: {
           q: 'anti-money laundering OR compliance OR financial crimes',
           language: 'en',

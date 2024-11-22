@@ -12,7 +12,7 @@ const Home = () => {
   ];
 
   return (
-    <Container className="home-container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <Container className="home-container text-center">
       <Row className="justify-content-center mb-5">
         <Col lg={10}>
           <h1 className="mt-4">Compliance Portal</h1>

@@ -2,34 +2,39 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import '../styles/News.scss';
-
-import BannerImage from '../assets/test.png';
+import DefaultImage from '../assets/test.png'; // Imagem padrão
 
 const NewsClipping = () => {
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchNews = async () => {
+    setLoading(true);
+    setError(null);
+
+    const BASE_URL = 'https://api.gdeltproject.org/api/v2/doc/doc';
+    const params = {
+      query: '(compliance OR financial crimes)', // Busca combinada
+      mode: 'artlist',
+      format: 'json',
+      sourceLang: 'en,es,pt', // Idiomas suportados
+      maxRecords: '20'
+    };
+
     try {
-      setLoading(true);
-      const response = await axios.get('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything', {
-        params: {
-          q: 'anti-money laundering OR compliance OR financial crimes',
-          language: 'en',
-          sortBy: 'relevancy',
-          pageSize: 30,
-          apiKey: process.env.REACT_APP_NEWS_API_KEY
-        },
-      });
-
-      const uniqueArticles = response.data.articles.filter(
-        (article, index, self) =>
-          index === self.findIndex((t) => t.title === article.title)
-      );
-
-      setArticles(uniqueArticles);
+      const response = await axios.get(BASE_URL, { params });
+      const formattedArticles = response.data.articles.map((article) => ({
+        title: article.title || 'No Title Available',
+        link: article.url || '#',
+        domain: article.domain || 'Unknown Source',
+        date: article.seendate?.date || 'Unknown Date',
+        image: article.socialimage || DefaultImage, // Fallback para a imagem padrão
+      }));
+      setArticles(formattedArticles);
     } catch (error) {
       console.error('Error fetching news:', error);
+      setError('Unable to fetch news at the moment. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -41,55 +46,48 @@ const NewsClipping = () => {
 
   return (
     <Container className="news-container">
-      <h2 className="mt-5">Related News</h2>
+      <h2>Related News</h2>
       <div className="text-center mb-5">
-        <Button variant="primary" onClick={fetchNews} disabled={loading}>
-          {loading ? 'Loading...' : 'Update News'}
+        <Button onClick={fetchNews} disabled={loading}>
+          {loading ? 'Loading...' : 'Refresh News'}
         </Button>
       </div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <Row className="text-center ">
+      {error && <p className="text-danger">{error}</p>}
+      {articles.length > 0 ? (
+        <Row>
           {articles.map((article, index) => (
             <Col key={index} md={3} className="mb-4">
-              <a
-                    href={article.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="align-items-center"
-                  >
               <Card className="news-card">
-                <Card.Img className="img"
-                  variant="top"
-                  src={article.urlToImage || [BannerImage] }
-                />
-                
-                <Card.Body className="justify-content-center">
-                  
+                <Card.Img variant="top" src={article.image} alt={article.title} />
+                <Card.Body>
                   <Card.Title>{article.title}</Card.Title>
                   <Card.Text>
                     <small className="text-muted">
-                      {new Intl.DateTimeFormat('en-US', {
+                      {new Date(article.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
-                      }).format(new Date(article.publishedAt))}
+                      })}
                     </small>
                   </Card.Text>
                   <Card.Text>
-                    {article.description || 'No description available.'}
+                    <small className="text-muted">Source: {article.domain}</small>
                   </Card.Text>
-                  <div className='btn'>Read More</div>
-                    
-                  
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn"
+                  >
+                    Read More
+                  </a>
                 </Card.Body>
-                
               </Card>
-              </a>
             </Col>
           ))}
         </Row>
+      ) : (
+        <p>No articles found.</p>
       )}
     </Container>
   );

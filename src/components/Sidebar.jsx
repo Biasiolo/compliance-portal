@@ -4,8 +4,8 @@ import '../styles/Sidebar.scss';
 
 const Sidebar = () => {
   return (
-    <div className="sidebar bg-light d-flex flex-column align-items-center">
-      <h4 className="mt-3 mb-4 text-center">Countries</h4>
+    <div className="sidebar d-flex flex-column align-items-center">
+      <h4 className="mt-3 mb-4 text-center title">Countries</h4>
       <nav className="nav flex-column">
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/brazil" className="nav-link">Brazil</Link>

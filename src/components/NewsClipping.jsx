@@ -15,11 +15,13 @@ const NewsClipping = () => {
 
     const BASE_URL = 'https://api.gdeltproject.org/api/v2/doc/doc';
     const params = {
-      query: '(compliance OR financial crimes)', // Busca combinada
+      query: '(compliance OR financial crimes Latin america money laundering)', // Busca combinada
       mode: 'artlist',
       format: 'json',
-      sourceLang: 'en,es,pt', // Idiomas suportados
-      maxRecords: '20'
+      sourcelang: 'eng', // Idiomas suportados
+      maxRecords: '40',
+      sort: 'hybridrel'
+
     };
 
     try {
@@ -87,7 +89,7 @@ const NewsClipping = () => {
           ))}
         </Row>
       ) : (
-        <p>No articles found.</p>
+        <p>Wait...</p>
       )}
     </Container>
   );
